@@ -18,7 +18,8 @@ function Home() {
   const [result, setResult] = useState(false);
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(false);
-  const [currentWeather, setCurrentWeather] = useState(null); // New state for current weather
+  const [currentWeather, setCurrentWeather] = useState(null); 
+  const apiKey = process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY;
   const cityImages = {
     'New Delhi': delhi,
     'Mumbai': mumbai,
@@ -36,8 +37,10 @@ function Home() {
     fetchWeatherByCity('Chennai');
   }, []);
 
+ 
+
   const fetchWeatherByCity = (cityName) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=e658b4c59def5c6933e951dea638e6c0`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}`;
 
     axios.get(url)
       .then((response) => {
@@ -56,7 +59,7 @@ function Home() {
     setResult(true);
     setLoading(true);
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=e658b4c59def5c6933e951dea638e6c0`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
     axios.get(url)
       .then((response) => {
@@ -74,7 +77,7 @@ function Home() {
     setLoading(true);
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=e658b4c59def5c6933e951dea638e6c0`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
 
       axios.get(url)
         .then((response) => {
