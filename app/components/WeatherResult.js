@@ -10,7 +10,7 @@ const WeatherResult = ({ data }) => {
         <div className='flex items-center justify-between '>
           <div className='flex flex-col gap-3'>
             <p className='text-6xl'>{data.main.temp.toFixed(0)}&#176;</p>
-            <p className='text-lg mr-2 mt-2'>{data.weather[0].main}</p>
+            <p className='text-lg ml-4 mt-2'>{data.weather[0].main}</p>
           </div>
           
           <div className='relative w-40 h-40'>
@@ -49,3 +49,4 @@ const WeatherResult = ({ data }) => {
 }
 
 export default WeatherResult;
+
