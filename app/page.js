@@ -18,6 +18,7 @@ function Home() {
   const [result, setResult] = useState(false);
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(false);
+  const[myweather,setMyweather]-useState(false);
   const [currentWeather, setCurrentWeather] = useState(null); 
   const apiKey = process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY;
   const cityImages = {
@@ -75,6 +76,7 @@ function Home() {
   const getCurrentWeather = () => {
     setResult(true);
     setLoading(true);
+    setMyweather(true);
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
@@ -119,7 +121,7 @@ function Home() {
           ))}
         </div>
 
-        { currentWeather && <WeatherResult data={currentWeather} />}
+        { currentWeather && myweather && <WeatherResult data={currentWeather} />}
         {result && weather[city] && <WeatherResult data={weather[city]} />}
       </div>
     );
