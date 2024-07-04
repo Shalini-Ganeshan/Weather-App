@@ -42,7 +42,7 @@ const [city, setCity] = useState('');
 
   const fetchWeatherByCity = (cityName) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}`;
-setMyweather(false);
+setMyWeather(false);
     axios.get(url)
       .then((response) => {
         setWeather(prevState => ({
@@ -58,6 +58,7 @@ setMyweather(false);
   const fetchWeather = (e) => {
     e.preventDefault();
     setResult(true);
+    setMyWeather(false);
     setLoading(true);
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
@@ -76,7 +77,7 @@ setMyweather(false);
   const getCurrentWeather = () => {
     setResult(true);
     setLoading(true);
-    setMyweather(true);
+    setMyWeather(true);
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
