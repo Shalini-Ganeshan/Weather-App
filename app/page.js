@@ -119,7 +119,7 @@ function Home() {
           ))}
         </div>
 
-        {result && currentWeather && <WeatherResult data={currentWeather} />}
+        { currentWeather && <WeatherResult data={currentWeather} />}
         {result && weather[city] && <WeatherResult data={weather[city]} />}
       </div>
     );
