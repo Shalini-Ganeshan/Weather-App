@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import DefaultWeathers from './components/DefaultWeathers';
 import WeatherResult from './components/WeatherResult';
-import Loading from './components/Loading'
+import Loading from './components/Loading';
 import mumbai from './assets/mumbai.jpg';
 import kolkata from './assets/kolkata.jpg';
 import delhi from './assets/delhi.jpg';
@@ -18,7 +18,7 @@ function Home() {
   const [result, setResult] = useState(false);
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(false);
-  const [currentWeather, setCurrentWeather] = useState(null); 
+  const [currentWeather, setCurrentWeather] = useState(null);
   const apiKey = process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY;
   const cityImages = {
     'New Delhi': delhi,
@@ -36,8 +36,6 @@ function Home() {
     fetchWeatherByCity('Kolkata');
     fetchWeatherByCity('Chennai');
   }, []);
-
- 
 
   const fetchWeatherByCity = (cityName) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}`;
@@ -73,7 +71,7 @@ function Home() {
   };
 
   const getCurrentWeather = () => {
-    setResult(true);
+    setResult(false); // Clear result state to hide previous search result
     setLoading(true);
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
@@ -101,7 +99,7 @@ function Home() {
           <meta name='description' content='This app was made using Next JS' />
           <link rel='icon' href='/favicon.ico' />
         </Head>
-        <div className=' top-0 left-0 right-0 bottom-0 bg-black/30 z-[1]' />
+        <div className='top-0 left-0 right-0 bottom-0 bg-black/30 z-[1]' />
         <Image src="https://www.wallpaperflare.com/static/795/510/447/nature-landscape-hdr-field-wallpaper.jpg" alt="Cloudy background weather image" layout='fill' className='object-cover' />
         <div className='relative flex justify-between gap-10 item-center max-w-[500px] w-full m-auto text-white z-10'>
           <form className='flex mt-4 justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-300 text-white rounded-2xl' onSubmit={fetchWeather}>
@@ -119,7 +117,7 @@ function Home() {
           ))}
         </div>
 
-        { currentWeather && <WeatherResult data={currentWeather} />}
+        {currentWeather && <WeatherResult data={currentWeather} />}
         {result && weather[city] && <WeatherResult data={weather[city]} />}
       </div>
     );
