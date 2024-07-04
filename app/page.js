@@ -58,7 +58,7 @@ function Home() {
 
   const fetchWeather = (e) => {
     e.preventDefault();
-    
+    setResult(false);
     
     setLoading(true);
 
