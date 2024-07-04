@@ -2,7 +2,7 @@
 import axios from 'axios';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import DefaultWeathers from './components/DefaultWeathers';
 import WeatherResult from './components/WeatherResult';
