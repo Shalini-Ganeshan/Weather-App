@@ -8,7 +8,7 @@ const DefaultWeathers = ({ data, image }) => {
 
   return (
     <div className='relative flex flex-col justify-between max-w-[400px] w-full h-[30vh] m-auto p-4  text-grey-300 z-10'>
-      <div className='relative flex justify-between pt-8'>
+      <div className='relative flex justify-between pt-8 mt-2'>
       
         <p className='text-4xl text-black mt-4'>{data.main.temp.toFixed(0)}&#176;</p>
         <div className='flex flex-col justify-between '>
