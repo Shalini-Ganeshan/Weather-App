@@ -42,7 +42,7 @@ function Home() {
 
   const fetchWeatherByCity = (cityName) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}`;
-
+setMyweather(false);
     axios.get(url)
       .then((response) => {
         setWeather(prevState => ({
