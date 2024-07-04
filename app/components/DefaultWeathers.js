@@ -10,7 +10,7 @@ const DefaultWeathers = ({ data, image }) => {
     <div className='relative flex flex-col justify-between max-w-[400px] w-full h-[30vh] m-auto p-4  text-grey-300 z-10'>
       <div className='relative flex justify-between pt-8'>
       
-        <p className='text-4xl text-black'>{data.main.temp.toFixed(0)}&#176;</p>
+        <p className='text-4xl text-black mt-3'>{data.main.temp.toFixed(0)}&#176;</p>
         <div className='flex flex-col justify-between '>
           <Image
             src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
