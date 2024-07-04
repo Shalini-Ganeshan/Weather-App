@@ -112,7 +112,7 @@ function Home() {
         <div className="flex justify-between items-center w-full max-h-800 ">
           {Object.keys(weather).map(cityName => (
             <div key={cityName}>
-              {!result && <DefaultWeathers data={weather[cityName]} image={cityImages[cityName]} />}
+              {!result && !currentWeather <DefaultWeathers data={weather[cityName]} image={cityImages[cityName]} />}
             </div>
           ))}
         </div>
