@@ -122,8 +122,8 @@ setMyWeather(false);
           ))}
         </div>
 
-        { currentWeather && myweather && <WeatherResult data={currentWeather} />}
-        {result && weather[city] && !myweather &&<WeatherResult data={weather[city]} />}
+        { currentWeather && myWeather && <WeatherResult data={currentWeather} />}
+        {result && weather[city] && !myWeather &&<WeatherResult data={weather[city]} />}
       </div>
     );
   }
