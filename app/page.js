@@ -14,12 +14,12 @@ import chennai from './assets/chennai.png';
 import banglore from './assets/banglore.jpeg';
 
 function Home() {
-  const [city, setCity] = useState('');
+const [city, setCity] = useState('');
   const [result, setResult] = useState(false);
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(false);
-  const[myweather,setMyweather]-useState(false);
-  const [currentWeather, setCurrentWeather] = useState(null); 
+  const [myWeather, setMyWeather] = useState(false);
+  const [currentWeather, setCurrentWeather] = useState(null);
   const apiKey = process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY;
   const cityImages = {
     'New Delhi': delhi,
