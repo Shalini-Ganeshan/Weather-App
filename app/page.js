@@ -50,7 +50,7 @@ function Home() {
         }));
       })
       .catch((error) => {
-        console.error(Error fetching weather data for ${cityName}:, error);
+        console.error(`Error fetching weather data for ${cityName}:`, error);
       });
   };
 
