@@ -120,7 +120,7 @@ function Home() {
         </div>
 
         { currentWeather && !result && <WeatherResult data={currentWeather} />}
-        {result && weather[city] !currentWeather && <WeatherResult data={weather[city]} />}
+        {result && weather[city] && !currentWeather && <WeatherResult data={weather[city]} />}
       </div>
     );
   }
