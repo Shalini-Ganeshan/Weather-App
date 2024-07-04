@@ -18,7 +18,7 @@ function Home() {
   const [result, setResult] = useState(false);
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(false);
-  const [currentWeather, setCurrentWeather] = useState(null); 
+  const [currentWeather, setCurrentWeather] = useState(false); 
   const apiKey = process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY;
   const cityImages = {
     'New Delhi': delhi,
